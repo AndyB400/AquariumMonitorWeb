@@ -1,0 +1,6 @@
+<h3>Dashboard</h3>
+<ul class="aquariums">
+  <li *ngFor="let aquarium of aquariums" (click)="onSelect(aquarium)">
+    <span class="badge">{{aquarium.id}}</span> {{aquarium.name}}
+  </li>  
+</ul>
