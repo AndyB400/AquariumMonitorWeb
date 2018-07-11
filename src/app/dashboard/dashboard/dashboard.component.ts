@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Aquarium } from '../models/aquarium';
-import { AquariumService } from '../aquarium-service/aquarium.service';
+
+import { AquariumService } from '../../services/aquarium-service/aquarium.service';
+import { Aquarium } from '../../models/aquarium';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,12 +9,8 @@ import { AquariumService } from '../aquarium-service/aquarium.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  aquariums: Aquarium[];
-  selectedAquarium: Aquarium;
 
-  onSelect(aquarium: Aquarium): void {
-    this.selectedAquarium = aquarium;
-  }
+  aquariums: Aquarium[];
 
   constructor(private aquariumService: AquariumService) { }
 
@@ -22,6 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getAquariums(): void {
-    this.aquariums = this.aquariumService.getAquariums();
+    this.aquariumService.getAquariums()
+      .subscribe(aquariums => this.aquariums = aquariums);
   }
 }

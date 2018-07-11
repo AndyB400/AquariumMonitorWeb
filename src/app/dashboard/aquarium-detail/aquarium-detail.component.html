@@ -1,0 +1,44 @@
+<div class="aquarium">
+  <div *ngIf="aquarium">
+    <h2>{{aquarium.name}}</h2>
+    <div>
+      <span>id: </span>{{aquarium.id}}</div>
+    <div class="input-group input-group-sm">
+      <label>Name:
+        <input [(ngModel)]="aquarium.name" placeholder="name" />
+      </label>
+    </div>
+
+    <div class="input-group input-group-sm">
+      <label>Volume:
+        <input [(ngModel)]="aquarium.officalVolume" placeholder="officalVolume" />
+      </label>
+    </div>
+    <div class="input-group input-group-sm">
+      <label>Actual Volume:
+        <input [(ngModel)]="aquarium.actualVolume" placeholder="actualVolume" />
+      </label>
+    </div>
+    <div class="input-group input-group-sm">
+      <label>Width:
+        <input [(ngModel)]="aquarium.width" placeholder="width" />
+      </label>
+    </div>
+    <div class="input-group input-group-sm">
+      <label>Height:
+        <input [(ngModel)]="aquarium.height" placeholder="height" />
+      </label>
+    </div>
+    <div class="input-group input-group-sm">
+      <label>Length:
+        <input [(ngModel)]="aquarium.length" placeholder="length" />
+      </label>
+    </div>
+    <div class="input-group input-group-sm">
+      <label>Notes:
+        <input [(ngModel)]="aquarium.notes" placeholder="notes" />
+      </label>
+    </div>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

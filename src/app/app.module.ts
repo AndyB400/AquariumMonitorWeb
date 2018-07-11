@@ -1,28 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
-
-import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
-import { AquariumTileComponent } from './aquarium-tile/aquarium-tile.component';
-import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
+import { AppComponent } from './app.component';
+import { UiModule } from './ui/ui.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuBarComponent,
-    AquariumTileComponent,
-    AquariumDetailComponent,
-    DashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
+    HttpClientModule,
     AppRoutingModule,
+    UiModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
