@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Aquarium } from '../../models/aquarium';
+import { Aquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'aquarium-tile',

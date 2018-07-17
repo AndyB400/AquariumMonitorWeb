@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
-import { Aquarium } from '../../models/aquarium';
+import { Aquarium } from '../../_models/aquarium';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

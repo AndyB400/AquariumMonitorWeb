@@ -12,8 +12,8 @@ import { BsModalService } from "ngx-bootstrap/modal";
 import { BsModalRef } from "ngx-bootstrap/modal/bs-modal-ref.service";
 import { combineLatest, Subscription } from "rxjs";
 
-import { AquariumService } from "../../services/aquarium-service/aquarium.service";
-import { Aquarium } from "../../models/aquarium";
+import { AquariumService } from "../../_services/aquarium-service/aquarium.service";
+import { Aquarium } from "../../_models/aquarium";
 import { DeleteModalComponent } from "../delete-modal/delete-modal.component";
 
 @Component({

@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
-import { AquariumService }  from '../../services/aquarium-service/aquarium.service';
-import { Aquarium } from '../../models/aquarium';
+import { AquariumService }  from '../../_services/aquarium-service/aquarium.service';
+import { Aquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'app-aquarium-new',

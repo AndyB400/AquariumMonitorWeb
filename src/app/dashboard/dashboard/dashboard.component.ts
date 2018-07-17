@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { AquariumService } from '../../services/aquarium-service/aquarium.service';
-import { Aquarium } from '../../models/aquarium';
+import { AquariumService } from '../../_services/aquarium-service/aquarium.service';
+import { Aquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'app-dashboard',
