@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 import { AquariumService }  from '../../services/aquarium-service/aquarium.service';
-
 import { Aquarium } from '../../models/aquarium';
 
 @Component({
@@ -16,7 +16,8 @@ export class AquariumDetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private aquariumService: AquariumService,
-    private location: Location) { }
+    private location: Location,
+    private toastr: ToastrService) { }
 
     ngOnInit(): void {
       this.getAquarium();
@@ -34,6 +35,12 @@ export class AquariumDetailComponent implements OnInit {
 
     save(): void {
       this.aquariumService.updateAquarium(this.aquarium)
-      .subscribe(() => this.goBack());
+      .subscribe((result) => {
+        console.log(result);
+        if(result)
+          this.toastr.success('', 'Saved Successfully');
+        else
+          this.toastr.error('Unable to save aquarium', 'Error');
+       });
     }
 }
