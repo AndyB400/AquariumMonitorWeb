@@ -69,7 +69,10 @@ export class AquariumService {
    
     /** PUT: update the aquarium on the server */
     updateAquarium (aquarium: Aquarium): Observable<any> {
-      return this.http.put(this.aquariumsUrl, aquarium, httpOptions).pipe(
+      const id = typeof aquarium === 'number' ? aquarium : aquarium.id;
+      const url = `${this.aquariumsUrl}/${id}`;
+
+      return this.http.put(url, aquarium, httpOptions).pipe(
         tap(_ => this.log(`updated aquarium id=${aquarium.id}`)),
         catchError(this.handleError<any>('updateAquarium'))
       );
