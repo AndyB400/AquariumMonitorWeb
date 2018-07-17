@@ -5,6 +5,7 @@ import { AuthGuard } from './_gaurds/auth.guard';
 import { LoginComponent } from './login';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { AquariumDetailComponent } from './dashboard/aquarium-detail/aquarium-detail.component';
+import { AquariumNewComponent } from './dashboard/aquarium-new/aquarium-new.component';
 import { AboutComponent } from './ui/about/about.component';
 import { ContactComponent } from './ui/contact/contact.component';
 
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'aquarium/:id', component: AquariumDetailComponent, canActivate: [AuthGuard] },
-  
+  { path: 'aquarium', component: AquariumNewComponent, canActivate: [AuthGuard] },
   { path:'**'   , component: DashboardComponent, canActivate: [AuthGuard]  }
 ];
 
