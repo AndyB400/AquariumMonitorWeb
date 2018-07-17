@@ -1,0 +1,94 @@
+<div class="container">
+    <h2>New Aquarium</h2>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Name:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.name" placeholder="name" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Volume:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.officalVolume" placeholder="officalVolume" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Actual Volume:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.actualVolume" placeholder="actualVolume" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Width:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.width" placeholder="width" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Height:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.height" placeholder="height" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Length:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input [(ngModel)]="aquarium.length" placeholder="length" />
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="input-group input-group">
+        <div class="form-group col-md-6">
+          <label>Notes:</label>
+        </div>
+        <div class="form-group col-md-6">
+          <textarea class="form-control" aria-label="Notes" [(ngModel)]="aquarium.notes"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <button (click)="goBack()">Go Back</button>
+      </div>
+      <div class="col-sm-2">
+        <button (click)="save()">Save</button>
+      </div>
+      <div class="col-sm-4">
+          &nbsp;
+      </div>
+    </div>
+  </div>
