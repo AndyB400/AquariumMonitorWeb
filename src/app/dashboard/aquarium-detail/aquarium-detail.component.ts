@@ -36,7 +36,6 @@ export class AquariumDetailComponent implements OnInit {
     save(): void {
       this.aquariumService.updateAquarium(this.aquarium)
       .subscribe((result) => {
-        console.log(result);
         if(result)
           this.toastr.success('', 'Saved Successfully');
         else
