@@ -23,6 +23,7 @@ export class AuthenticationService {
     }
 
     logout() {
+        console.log('Logging out...');
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
     }
