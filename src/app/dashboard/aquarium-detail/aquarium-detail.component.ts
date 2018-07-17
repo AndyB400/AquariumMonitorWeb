@@ -31,4 +31,9 @@ export class AquariumDetailComponent implements OnInit {
     goBack(): void {
       this.location.back();
     }
+
+    save(): void {
+      this.aquariumService.updateAquarium(this.aquarium)
+      .subscribe(() => this.goBack());
+    }
 }
