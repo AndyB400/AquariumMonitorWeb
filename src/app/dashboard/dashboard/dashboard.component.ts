@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { AquariumService } from '../../services/aquarium-service/aquarium.service';
 import { Aquarium } from '../../models/aquarium';
@@ -12,7 +14,9 @@ export class DashboardComponent implements OnInit {
 
   aquariums: Aquarium[];
 
-  constructor(private aquariumService: AquariumService) { }
+  constructor(private route: ActivatedRoute,
+    private location: Location,
+    private aquariumService: AquariumService) { }
 
   ngOnInit() {
     this.getAquariums();

@@ -15,8 +15,8 @@ export class AquariumDetailComponent implements OnInit {
   @Input() aquarium: Aquarium;
 
   constructor(private route: ActivatedRoute,
-    private aquariumService: AquariumService,
     private location: Location,
+    private aquariumService: AquariumService,
     private toastr: ToastrService) { }
 
     ngOnInit(): void {
