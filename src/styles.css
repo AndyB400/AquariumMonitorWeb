@@ -43,3 +43,8 @@ button:disabled {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.main-content {
+  width:1000px;
+  margin: 40px auto;
+  padding: 20px 30px;
+}
