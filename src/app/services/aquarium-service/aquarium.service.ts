@@ -11,7 +11,6 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-// we can now access environment.apiUrl
 const API_URL = environment.apiUrl;
 
 @Injectable({
