@@ -20,6 +20,7 @@ export class AquariumNewComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.aquarium = new Aquarium;
   }
 
   goBack(): void {
@@ -27,7 +28,7 @@ export class AquariumNewComponent implements OnInit {
   }
 
   save(): void {
-    this.aquariumService.updateAquarium(this.aquarium)
+    this.aquariumService.addAquarium(this.aquarium)
     .subscribe((result) => {
       if(result)
         this.toastr.success('', 'Saved Successfully');

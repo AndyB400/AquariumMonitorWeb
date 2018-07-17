@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
 import { AquariumTileComponent } from '../dashboard/aquarium-tile/aquarium-tile.component';
 import { AquariumNewComponent } from './aquarium-new/aquarium-new.component';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { AquariumNewComponent } from './aquarium-new/aquarium-new.component';
     AppRoutingModule,
     FormsModule
   ],
-  declarations: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, AquariumNewComponent],
-  exports: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent]
+  declarations: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, AquariumNewComponent, DeleteModalComponent],
+  exports: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, DeleteModalComponent],
+  entryComponents: [DeleteModalComponent]
 })
 export class DashboardModule { }

@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -25,7 +27,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
-
+    ModalModule.forRoot(),
+    
     UiModule,
     DashboardModule
   ],
