@@ -94,17 +94,6 @@
   <span>Unable to load aquarium</span>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <button (click)="goBack()">Go Back</button>
-    </div>
-    <div class="col-sm-2">
-      <button (click)="save()" *ngIf="aquarium">Save</button>
-    </div>
-    <div class="col-sm-4">
-      <button class="btn" (click)="openDeleteConfirmModal()">Delete</button>
-    </div>
-  </div>
-</div>
-
+<button class="btn btn-outline-info" (click)="goBack()">Go Back</button>
+<button class="btn btn-outline-info" (click)="save()" *ngIf="aquarium">Save</button>
+<button class="btn btn-outline-info float-right" (click)="openDeleteConfirmModal()">Delete</button>
