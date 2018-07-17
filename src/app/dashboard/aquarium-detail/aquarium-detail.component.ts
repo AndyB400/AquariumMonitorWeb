@@ -1,16 +1,9 @@
-import {
-  Component,
-  OnInit,
-  Input,
-  ChangeDetectorRef,
-  TemplateRef
-} from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
 import { ToastrService } from "ngx-toastr";
 import { BsModalService } from "ngx-bootstrap/modal";
 import { BsModalRef } from "ngx-bootstrap/modal/bs-modal-ref.service";
-import { combineLatest, Subscription } from "rxjs";
 
 import { AquariumService } from "../../_services/aquarium-service/aquarium.service";
 import { Aquarium } from "../../_models/aquarium";
@@ -30,9 +23,8 @@ export class AquariumDetailComponent implements OnInit {
     private location: Location,
     private aquariumService: AquariumService,
     private toastr: ToastrService,
-    private modalService: BsModalService,
-    private changeDetection: ChangeDetectorRef
-  ) {}
+    private modalService: BsModalService
+  ) { }
 
   ngOnInit(): void {
     this.getAquarium();
@@ -51,9 +43,9 @@ export class AquariumDetailComponent implements OnInit {
 
   save(): void {
     this.aquariumService.updateAquarium(this.aquarium).subscribe(result => {
-      if (result) 
+      if (result)
         this.toastr.error(`Unable to save aquarium. ${result}`, "Error");
-      else 
+      else
         this.toastr.success("", "Saved Successfully");
 
     });
@@ -63,9 +55,9 @@ export class AquariumDetailComponent implements OnInit {
     console.log("Deleting...");
     this.aquariumService.deleteAquarium(this.aquarium).subscribe(result => {
 
-      if (result) 
+      if (result)
         this.toastr.error(`Unable to delete aquarium. ${result}`, "Error");
-      else 
+      else
         this.location.back();
     });
   }
@@ -75,7 +67,7 @@ export class AquariumDetailComponent implements OnInit {
       title: "Delete Aquarium",
       message: `Are you sure you want to delete Aqaurium: ${
         this.aquarium.name
-      }?`
+        }?`
     };
 
     this.deleteConfirmmodalRef = this.modalService.show(DeleteModalComponent, {
