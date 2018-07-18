@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { Location } from "@angular/common";
+import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { BsModalService } from "ngx-bootstrap/modal";
 import { BsModalRef } from "ngx-bootstrap/modal/bs-modal-ref.service";
@@ -20,7 +19,7 @@ export class AquariumDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location,
+    private router: Router,
     private aquariumService: AquariumService,
     private toastr: ToastrService,
     private modalService: BsModalService
@@ -38,7 +37,7 @@ export class AquariumDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/aquariums']);
   }
 
   save(): void {
@@ -58,7 +57,7 @@ export class AquariumDetailComponent implements OnInit {
       if (result)
         this.toastr.error(`Unable to delete aquarium. ${result}`, "Error");
       else
-        this.location.back();
+        this.router.navigate(['/aquariums']);
     });
   }
 
