@@ -17,7 +17,7 @@ const API_URL = environment.apiUrl;
   providedIn: 'root'
 })
 export class AquariumService {
-  private aquariumsUrl = API_URL + 'aqua'; 
+  private aquariumsUrl = API_URL + 'aquariums'; 
 
   constructor( private http: HttpClient) { }
 
