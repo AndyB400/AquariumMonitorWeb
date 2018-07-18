@@ -11,13 +11,13 @@ import { ContactComponent } from './ui/contact/contact.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'home', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'aquarium/:id', component: AquariumDetailComponent, canActivate: [AuthGuard] },
   { path: 'aquarium', component: AquariumNewComponent, canActivate: [AuthGuard] },
-  { path:'**'   , component: DashboardComponent, canActivate: [AuthGuard]  }
+  { path:'**'   , component: DashboardComponent, canActivate: [AuthGuard]  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
