@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col col-lg-8">
+    <h3>Aquariums</h3>
+  </div>
+  <div class="col col-lg-4">
+    <button type="button" routerLink="/aquarium" class="btn btn-outline-info float-right btn-sm">Add</button>
+  </div>
+</div>
+<hr/>
+
+<div class="container">
+  <div *ngFor="let aquarium of aquariums" class="d-inline-flex">
+    <aquarium-tile [aquarium]="aquarium"></aquarium-tile>
+  </div>
+</div>
