@@ -27,6 +27,7 @@ export class AquariumService {
 
   getAquarium(id: number): Observable<Aquarium> {
     const url = `${this.aquariumsUrl}/${id}`;
+    
     return this.http.get<Aquarium>(url).pipe(
       tap(_ => this.log(`fetched aquarium id=${id}`)),
       catchError(this.handleError<Aquarium>(`getAquarium id=${id}`))

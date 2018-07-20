@@ -8,14 +8,16 @@ import { AquariumDetailComponent } from './dashboard/aquarium-detail/aquarium-de
 import { AquariumNewComponent } from './dashboard/aquarium-new/aquarium-new.component';
 import { AboutComponent } from './ui/about/about.component';
 import { ContactComponent } from './ui/contact/contact.component';
-
+import { AquariumNotFoundComponent } from './dashboard/aquarium-not-found/aquarium-not-found.component';
+import { AquariumExistsActivator } from './_gaurds/aquarium-exists-activator';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'aquarium/:id', component: AquariumDetailComponent, canActivate: [AuthGuard] },
+  { path: 'aquarium/:id', component: AquariumDetailComponent, canActivate: [AuthGuard,AquariumExistsActivator] },
   { path: 'aquarium', component: AquariumNewComponent, canActivate: [AuthGuard] },
+  { path: '404', component: AquariumNotFoundComponent },
   { path:'**'   , component: DashboardComponent, canActivate: [AuthGuard]  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

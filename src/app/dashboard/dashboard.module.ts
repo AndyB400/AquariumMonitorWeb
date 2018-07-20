@@ -8,6 +8,8 @@ import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.compo
 import { AquariumTileComponent } from '../dashboard/aquarium-tile/aquarium-tile.component';
 import { AquariumNewComponent } from './aquarium-new/aquarium-new.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { AquariumNotFoundComponent } from './aquarium-not-found/aquarium-not-found.component';
+import { AquariumExistsActivator } from '../_gaurds/aquarium-exists-activator';
 
 @NgModule({
   imports: [
@@ -15,8 +17,9 @@ import { DeleteModalComponent } from './delete-modal/delete-modal.component';
     AppRoutingModule,
     FormsModule
   ],
-  declarations: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, AquariumNewComponent, DeleteModalComponent],
+  declarations: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, AquariumNewComponent, DeleteModalComponent, AquariumNotFoundComponent],
   exports: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, DeleteModalComponent],
-  entryComponents: [DeleteModalComponent]
+  entryComponents: [DeleteModalComponent],
+  providers: [AquariumExistsActivator]
 })
 export class DashboardModule { }
