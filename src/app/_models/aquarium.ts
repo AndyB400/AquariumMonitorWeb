@@ -1,4 +1,4 @@
-export class Aquarium {
+export interface Aquarium {
     id: number;
     url: string;
     name: string;

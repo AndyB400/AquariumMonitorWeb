@@ -1,3 +1,3 @@
-export class AquariumType {
+export interface AquariumType {
     name: string;
   }
