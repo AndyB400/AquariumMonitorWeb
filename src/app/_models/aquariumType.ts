@@ -1,3 +1,3 @@
-export interface AquariumType {
+export interface IAquariumType {
     name: string;
   }
