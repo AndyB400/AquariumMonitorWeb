@@ -5,7 +5,7 @@ import { BsModalService } from "ngx-bootstrap/modal";
 import { BsModalRef } from "ngx-bootstrap/modal/bs-modal-ref.service";
 
 import { AquariumService } from "../../_services/aquarium-service/aquarium.service";
-import { Aquarium } from "../../_models/aquarium";
+import { IAquarium } from "../../_models/aquarium";
 import { DeleteModalComponent } from "../delete-modal/delete-modal.component";
 
 @Component({
@@ -14,7 +14,7 @@ import { DeleteModalComponent } from "../delete-modal/delete-modal.component";
   styleUrls: ["./aquarium-detail.component.css"]
 })
 export class AquariumDetailComponent implements OnInit {
-  @Input() aquarium: Aquarium;
+  @Input() aquarium: IAquarium;
   deleteConfirmmodalRef: BsModalRef;
 
   constructor(

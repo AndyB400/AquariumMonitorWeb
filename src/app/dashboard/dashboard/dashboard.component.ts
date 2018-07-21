@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { AquariumService } from '../../_services/aquarium-service/aquarium.service';
-import { Aquarium } from '../../_models/aquarium';
+import { IAquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,7 @@ import { Aquarium } from '../../_models/aquarium';
 })
 export class DashboardComponent implements OnInit {
 
-  aquariums: Aquarium[];
+  aquariums: IAquarium[];
 
   constructor(private route: ActivatedRoute,
     private location: Location,

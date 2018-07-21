@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Aquarium } from '../../_models/aquarium';
+import { IAquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'aquarium-tile',
@@ -7,7 +7,7 @@ import { Aquarium } from '../../_models/aquarium';
   styleUrls: ['./aquarium-tile.component.css']
 })
 export class AquariumTileComponent implements OnInit {
-  @Input() aquarium: Aquarium;
+  @Input() aquarium: IAquarium;
 
   constructor() { }
 

@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
 import { AquariumService }  from '../../_services/aquarium-service/aquarium.service';
-import { Aquarium } from '../../_models/aquarium';
+import { IAquarium } from '../../_models/aquarium';
 
 @Component({
   selector: 'app-aquarium-new',
@@ -12,7 +12,7 @@ import { Aquarium } from '../../_models/aquarium';
   styleUrls: ['./aquarium-new.component.css']
 })
 export class AquariumNewComponent implements OnInit {
-  aquarium: Aquarium;
+  aquarium: IAquarium;
 
   constructor(private route: ActivatedRoute,
     private location: Location,
@@ -20,7 +20,7 @@ export class AquariumNewComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.aquarium = new Aquarium;
+    //this.aquarium = new IAquarium;
   }
 
   goBack(): void {

@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
-import { Aquarium } from '../../_models/aquarium';
+import { IAquarium } from '../../_models/aquarium';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,54 +21,54 @@ export class AquariumService {
 
   constructor( private http: HttpClient) { }
 
-  getAquariums(): Observable<Aquarium[]> {
-    return this.http.get<Aquarium[]>(this.aquariumsUrl);
+  getAquariums(): Observable<IAquarium[]> {
+    return this.http.get<IAquarium[]>(this.aquariumsUrl);
   }
 
-  getAquarium(id: number): Observable<Aquarium> {
+  getAquarium(id: number): Observable<IAquarium> {
     const url = `${this.aquariumsUrl}/${id}`;
     
-    return this.http.get<Aquarium>(url).pipe(
-      tap(_ => this.log(`fetched aquarium id=${id}`)),
-      catchError(this.handleError<Aquarium>(`getAquarium id=${id}`))
+    return this.http.get<IAquarium>(url).pipe(
+      tap(_ => this.log(`fetched Aquarium id=${id}`)),
+      catchError(this.handleError<IAquarium>(`getAquarium id=${id}`))
     );
   }
 
-    /* GET aquariums whose name contains search term */
-    searchAquariums(term: string): Observable<Aquarium[]> {
+    /* GET Aquariums whose name contains search term */
+    searchAquariums(term: string): Observable<IAquarium[]> {
       if (!term.trim()) {
-        // if not search term, return empty aquarium array.
+        // if not search term, return empty Aquarium array.
         return of([]);
       }
-      return this.http.get<Aquarium[]>(`${this.aquariumsUrl}/?name=${term}`).pipe(
-        tap(_ => this.log(`found aquariums matching "${term}"`)),
-        catchError(this.handleError<Aquarium[]>('searchAquariums', []))
+      return this.http.get<IAquarium[]>(`${this.aquariumsUrl}/?name=${term}`).pipe(
+        tap(_ => this.log(`found Aquariums matching "${term}"`)),
+        catchError(this.handleError<IAquarium[]>('searchAquariums', []))
       );
     }
    
     //////// Save methods //////////
    
     /** POST: add a new aquarium to the server */
-    addAquarium (aquarium: Aquarium): Observable<Aquarium> {
-      return this.http.post<Aquarium>(this.aquariumsUrl, aquarium, httpOptions).pipe(
-        tap((aquarium: Aquarium) => this.log(`added aquarium w/ id=${aquarium.id}`)),
-        catchError(this.handleError<Aquarium>('addAquarium'))
+    addAquarium (aquarium: IAquarium): Observable<IAquarium> {
+      return this.http.post<IAquarium>(this.aquariumsUrl, aquarium, httpOptions).pipe(
+        tap((aquarium: IAquarium) => this.log(`added aquarium w/ id=${aquarium.id}`)),
+        catchError(this.handleError<IAquarium>('addAquarium'))
       );
     }
    
     /** DELETE: delete the aquarium from the server */
-    deleteAquarium (aquarium: Aquarium | number): Observable<Aquarium> {
+    deleteAquarium (aquarium: IAquarium | number): Observable<IAquarium> {
       const id = typeof aquarium === 'number' ? aquarium : aquarium.id;
       const url = `${this.aquariumsUrl}/${id}`;
    
-      return this.http.delete<Aquarium>(url, httpOptions).pipe(
+      return this.http.delete<IAquarium>(url, httpOptions).pipe(
         tap(_ => this.log(`deleted aquarium id=${id}`)),
-        catchError(this.handleError<Aquarium>('deleteAquarium'))
+        catchError(this.handleError<IAquarium>('deleteAquarium'))
       );
     }
    
     /** PUT: update the aquarium on the server */
-    updateAquarium (aquarium: Aquarium): Observable<any> {
+    updateAquarium (aquarium: IAquarium): Observable<any> {
       const id = typeof aquarium === 'number' ? aquarium : aquarium.id;
       const url = `${this.aquariumsUrl}/${id}`;
 
