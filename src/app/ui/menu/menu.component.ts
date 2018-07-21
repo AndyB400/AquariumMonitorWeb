@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
+import { AuthenticationService } from '../../_services/authentication.service';
 
 @Component({
   selector: 'menu-bar',
@@ -10,7 +11,8 @@ import { Location } from "@angular/common";
 export class MenuComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private auth: AuthenticationService) { }
 
   ngOnInit() {
   }

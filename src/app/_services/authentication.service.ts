@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
+import { IUser } from '../_models/user';
 
 const API_URL = environment.apiUrl;
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private authenticateUrl = API_URL + 'auth/token';
+    currentUser:IUser;
 
     constructor(private http: HttpClient) { }
 
@@ -18,6 +20,8 @@ export class AuthenticationService {
                 if (res && res.token) {
                     // store username and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify({ username, token: res.token }));
+
+                    this.currentUser = res.user;
                 }
             }));
     }
@@ -26,5 +30,9 @@ export class AuthenticationService {
         console.log('Logging out...');
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
+    }
+
+    isAuthenticated(){
+        return !!this.currentUser;
     }
 }
