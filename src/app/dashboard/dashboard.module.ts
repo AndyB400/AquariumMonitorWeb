@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AquariumDetailComponent } from './aquarium-detail/aquarium-detail.component';
@@ -15,7 +15,8 @@ import { AquariumExistsActivator } from '../_gaurds/aquarium-exists-activator';
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, AquariumNewComponent, DeleteModalComponent, AquariumNotFoundComponent],
   exports: [DashboardComponent, AquariumTileComponent, AquariumDetailComponent, DeleteModalComponent],

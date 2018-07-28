@@ -1,98 +1,59 @@
 <div class="container">
   <h3>New Aquarium</h3>
+  <form [formGroup]="newAquariumForm" (ngSubmit)="save(newAquariumForm.value)" novalidate>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Name:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.name" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': name?.invalid && name?.touched}">
+      <label for="aquarium-name">Name: </label>
+      <input formControlName="name" id="aquarium-name" type="text" />
+      <em *ngIf="name?.invalid && name?.touched">Required</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Type:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <select [(ngModel)]="aquarium.typeName">
-          <option>Marine</option>
-          <option>Tropical</option>
-          <option>Brackish</option>
-        </select>
-      </div>
+    <div class="form-group">
+      <label>Type:</label>
+      <select class="form-control">
+        <option>Marine</option>
+        <option>Tropical</option>
+        <option>Brackish</option>
+      </select>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Volume:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.officalVolume" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': volume?.invalid && volume?.touched}">
+      <label for="aquarium-volume">Volume: </label>
+      <input formControlName="volume" id="aquarium-volume" type="text" />
+      <em *ngIf="volume?.invalid && volume?.touched">Must be a number between 1 and 9999</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Actual Volume:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.actualVolume" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': actualVolume?.invalid && actualVolume?.touched}">
+      <label for="aquarium-actual-volume">Actual Volume: </label>
+      <input formControlName="actualVolume" id="aquarium-actual-volume" type="text" />
+      <em *ngIf="actualVolume?.invalid && actualVolume?.touched">Must be a number between 1 and 9999</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Width:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.width" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': width?.invalid && width?.touched}">
+      <label for="aquarium-width">Width: </label>
+      <input formControlName="width" id="aquarium-width" type="text" />
+      <em *ngIf="width?.invalid && width?.touched">Must be a number between 1 and 9999</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Height:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.height" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': height?.invalid && height?.touched}">
+      <label for="aquarium-height">Height: </label>
+      <input formControlName="height" id="aquarium-height" type="text" />
+      <em *ngIf="height?.invalid && height?.touched">Must be a number between 1 and 9999</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Length:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input [(ngModel)]="aquarium.length" />
-      </div>
+    <div class="form-group" [ngClass]="{'error': length?.invalid && length?.touched}">
+      <label for="aquarium-length">Length: </label>
+      <input formControlName="length" id="aquarium-length" type="text" />
+      <em *ngIf="length?.invalid && length?.touched">Must be a number between 1 and 9999</em>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="input-group input-group">
-      <div class="form-group col-md-6">
-        <label>Notes:</label>
-      </div>
-      <div class="form-group col-md-6">
-        <textarea class="form-control" aria-label="Notes" [(ngModel)]="aquarium.notes"></textarea>
-      </div>
+    <div class="form-group" [ngClass]="{'error': notes?.invalid && notes?.touched}">
+      <label for="aquarium-notes">Notes: </label>
+      <textarea formControlName="name" id="aquarium-notes"></textarea>
+      <em *ngIf="notes?.invalid && notes?.touched">Required</em>
     </div>
-  </div>
+
+    <button type="button" class="btn btn-outline-info" (click)="cancel()">Go Back</button>
+    <button type="submit" class="btn btn-outline-info" [disabled]="newAquariumForm.invalid">Save</button>
+  </form>
 </div>
-
-<button class="btn btn-outline-info" (click)="goBack()">Go Back</button>
-<button class="btn btn-outline-info" (click)="save()">Save</button>

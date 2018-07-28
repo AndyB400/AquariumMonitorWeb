@@ -9,7 +9,12 @@
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
       <a *ngIf="!auth.isAuthenticated()" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      <a *ngIf="auth.isAuthenticated()" class="nav-item nav-link" routerLink="/user/profile" routerLinkActive="active">Profile</a>
+
+      <div *ngIf="auth.isAuthenticated()" class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/user/profile" routerLinkActive="active">Profile</a>
+        <a *ngIf="auth.currentUser.isAdmin" class="nav-item nav-link" routerLink="/user/settings" routerLinkActive="active">Settings</a>
+        <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Log out</a>
+      </div>
     </div>
   </div>
 </nav>
