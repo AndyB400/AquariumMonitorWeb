@@ -9,13 +9,7 @@ import { IAquarium } from '../../_models/aquarium';
 @Component({
   selector: 'app-aquarium-new',
   templateUrl: './aquarium-new.component.html',
-  styles: [`
-    form { margin-top: 10px; }
-    label { display: block; }
-    .form-group { margin-top: 5px; }
-    em {color:#E05C65; padding-left:10px;}
-    .error input {background-color:#E3C3C5;}
-  `]
+  styleUrls: ['./aquarium-new.component.css']
 })
 export class AquariumNewComponent implements OnInit {
   aquarium: IAquarium;
