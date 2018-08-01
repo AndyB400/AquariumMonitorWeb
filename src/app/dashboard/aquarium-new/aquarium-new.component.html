@@ -6,7 +6,7 @@
     <div class="form-group" [ngClass]="{'error': name?.invalid && name?.touched}">
       <label for="aquarium-name">Name: </label>
       <em *ngIf="name?.invalid && name?.touched">Required</em>
-      <input formControlName="name" id="aquarium-name" type="text" class="form-control" />
+      <input formControlName="name" id="name" type="text" class="form-control" />
     </div>
 
     <div class="form-group">
@@ -21,37 +21,37 @@
     <div class="form-group" [ngClass]="{'error': volume?.invalid && volume?.touched}">
       <label for="aquarium-volume">Volume: </label>
       <em *ngIf="volume?.invalid && volume?.touched">Must be a number between 1 and 9999</em>
-      <input formControlName="volume" id="aquarium-volume" type="text" class="form-control" />
+      <input formControlName="officalVolume" id="officalVolume" type="text" class="form-control" />
     </div>
 
     <div class="form-group" [ngClass]="{'error': actualVolume?.invalid && actualVolume?.touched}">
       <label for="aquarium-actual-volume">Actual Volume: </label>
       <em *ngIf="actualVolume?.invalid && actualVolume?.touched">Must be a number between 1 and 9999</em>
-      <input formControlName="actualVolume" id="aquarium-actual-volume" type="text" class="form-control" />
+      <input formControlName="actualVolume" id="actualVolume" type="text" class="form-control" />
     </div>
 
     <div class="form-group" [ngClass]="{'error': width?.invalid && width?.touched}">
       <label for="aquarium-width">Width: </label>
       <em *ngIf="width?.invalid && width?.touched">Must be a number between 1 and 9999</em>
-      <input formControlName="width" id="aquarium-width" type="text" class="form-control" />    
+      <input formControlName="width" id="width" type="text" class="form-control" />    
     </div>
 
     <div class="form-group" [ngClass]="{'error': height?.invalid && height?.touched}">
       <label for="aquarium-height">Height: </label>
       <em *ngIf="height?.invalid && height?.touched">Must be a number between 1 and 9999</em>
-      <input formControlName="height" id="aquarium-height" type="text" class="form-control" />
+      <input formControlName="height" id="height" type="text" class="form-control" />
     </div>
 
     <div class="form-group" [ngClass]="{'error': length?.invalid && length?.touched}">
       <label for="aquarium-length">Length: </label>
       <em *ngIf="length?.invalid && length?.touched">Must be a number between 1 and 9999</em>
-      <input formControlName="length" id="aquarium-length" type="text" class="form-control" />
+      <input formControlName="length" id="length" type="text" class="form-control" />
     </div>
 
     <div class="form-group" [ngClass]="{'error': notes?.invalid && notes?.touched}">
       <label for="aquarium-notes">Notes: </label>
       <em *ngIf="notes?.invalid && notes?.touched">Required</em>
-      <textarea formControlName="name" id="aquarium-notes" class="form-control"></textarea>
+      <textarea formControlName="name" id="notes" class="form-control"></textarea>
     </div>
 
     <button type="button" class="btn btn-outline-info" (click)="cancel()">Go Back</button>
