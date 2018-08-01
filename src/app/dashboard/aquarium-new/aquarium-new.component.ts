@@ -21,6 +21,7 @@ export class AquariumNewComponent implements OnInit {
   }
 
   name: FormControl = new FormControl('', [Validators.required, Validators.maxLength(100)])
+  typeName: FormControl = new FormControl('Marine')
   volume: FormControl = new FormControl('', [Validators.pattern(this.regexpatterns.upTo9999)])
   actualVolume: FormControl = new FormControl('', [Validators.pattern(this.regexpatterns.upTo9999)])
   officialVolume: FormControl = new FormControl('', [Validators.pattern(this.regexpatterns.upTo9999)])
@@ -39,6 +40,7 @@ export class AquariumNewComponent implements OnInit {
     this.newAquariumForm = new FormGroup({
       name: this.name,
       volume: this.volume,
+      typeName: this.typeName,
       actualVolume: this.actualVolume,
       officalVolume: this.officialVolume,
       height: this.height,
