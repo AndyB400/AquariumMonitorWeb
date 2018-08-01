@@ -6,7 +6,6 @@ export interface IAquarium {
     notes: string;
     userId: number;
     typeName: string;
-    volume: number;
     officalVolume: number;
     actualVolume: number;
     volumeUnitName: string;
