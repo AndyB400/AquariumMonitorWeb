@@ -77,8 +77,10 @@ export class AquariumNewComponent implements OnInit {
 
     this.aquariumService.addAquarium(aquarium)
       .subscribe((result) => {
-        if (result)
-          this.toastr.success('', 'Saved Successfully');
+        if (result){
+          this.toastr.success('', 'Created Successfully');          
+          this.router.navigate(['/aquarium/' + result.id])
+        }
         else
           this.toastr.error('Unable to add aquarium', 'Error');
       });
